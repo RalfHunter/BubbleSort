@@ -12,34 +12,50 @@ describe('Lista certas', ()=>{
     })
 
     it(`Lista com array com ${numero * 2} numeros`, async () =>{
-        const arr = listaDecrescente(numero * 2)
+        const arr = listaDecrescente(numero)
         const antes = performance.now()
-        bubbleSortOptmize2(arr)
+        bubbleSortOptmize2([...arr])
         const depois = performance.now()
         const ranking:Ranking = {lista:arr.length, tempo:depois - antes}
         RankingFinal.push(ranking)
         numero = arr.length
+        console.log(arr[arr.length-1])
     });
 
     it(`Lista com array com ${numero * 2} numeros`, async () =>{
         const arr = listaDecrescente(numero * 2)
         const antes = performance.now()
-        bubbleSortOptmize2(arr)
+        bubbleSortOptmize2([...arr])
         const depois = performance.now()
         const ranking:Ranking = {lista:arr.length, tempo:depois - antes}
         RankingFinal.push(ranking)
         numero = arr.length
+        console.log(arr[arr.length-1])
     });
 
     it(`Lista com array com ${numero * 2} numeros`, async () =>{
         const arr = listaDecrescente(numero * 2)
         const antes = performance.now()
-        bubbleSortOptmize2(arr)
+        bubbleSortOptmize2([...arr])
         const depois = performance.now()
         const ranking:Ranking = {lista:arr.length, tempo:depois - antes}
         RankingFinal.push(ranking)
         numero = arr.length
+        console.log(arr[arr.length-1])
     })
+
+    it(`Lista com array com ${numero * 2} numeros`, async () =>{
+        const arr = listaDecrescente(numero * 2)
+        const antes = performance.now()
+        bubbleSortOptmize2([...arr])
+        const depois = performance.now()
+        const ranking:Ranking = {lista:arr.length, tempo:depois - antes}
+        RankingFinal.push(ranking)
+        numero = arr.length
+        console.log(arr[arr.length-1])
+    });
+
+    
 
     afterAll(()=>{
         let texto:string = ""
@@ -47,8 +63,8 @@ describe('Lista certas', ()=>{
             texto += `lista com ${r.lista} items demorou ${r.tempo} ms\n`
         }
         const R = RankingFinal
-        const media = (R[0].tempo + R[1].tempo + R[2].tempo) / 2
-        const variacao = ((R[0].tempo - media)**2 + (R[1].tempo -media)**2 + (R[2].tempo-media)**2)/R.length
+        const media = (R[0].tempo + R[1].tempo + R[2].tempo + R[3].tempo) / R.length
+        const variacao = ((R[0].tempo - media)**2 + (R[1].tempo -media)**2 + (R[2].tempo-media)**2 + (R[3].tempo-media)**2)/R.length
         const DP = Math.sqrt(variacao)
         const CV = (DP/media)*100
         texto += `Coeficiente de variação é de ${CV}\n`
