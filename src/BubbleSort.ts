@@ -40,7 +40,7 @@ export const bubbleSortOptmize2 = (arr: number[]): number[] =>{
     let n:number = arr.length
     while(n > 0){
         let trocas = 0;
-        for(let i:number = 0; i < n -   1; i ++){
+        for(let i:number = 0; i < n - 1; i ++){
             let anterior:number = arr[i];
             let proximo:number = arr[i+1]
             if(anterior > proximo){

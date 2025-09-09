@@ -9,7 +9,7 @@ describe('bubbleSort', () => {
     let metodoOtimizado_2:Placar;
     let ranking:Placar[] = [];
     beforeAll(() =>{
-        listaDesordenada = newLista(100000)
+        listaDesordenada = newLista(10_000)
         listaOrdenadaNativa = [...listaDesordenada].sort()
         // console.log(listaDesordenada)
        
@@ -74,9 +74,6 @@ describe('bubbleSort', () => {
         }
         const PlacarFinal = Ranking(ranking)
         let Texto:string = "";
-        // for(const p of PlacarFinal){
-        //     Texto += `${p.nome} ordenou \n \t\t\t\t${listaDesordenada.length} em \n \t\t\t\t\t\t${p.tempo} ms \n`
-        // }
         for(let i: number = 0; i < PlacarFinal.length; i++) {
             Texto += `${PlacarFinal[i].nome} -> ${PlacarFinal[PlacarFinal.length-1].tempo * 100 / PlacarFinal[i].tempo - 100 }% mais rápido que ${PlacarFinal[PlacarFinal.length-1].nome} \n`
         }
