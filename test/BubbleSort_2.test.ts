@@ -18,24 +18,27 @@ describe('Lista certas', ()=>{
         const depois = performance.now()
         const ranking:Ranking = {lista:arr.length, tempo:depois - antes}
         RankingFinal.push(ranking)
+        numero = arr.length
     });
 
     it('Lista com array com 1_000 numeros', async () =>{
-        const arr = listaDecrescente(1_000)
+        const arr = listaDecrescente(numero * 2)
         const antes = performance.now()
         bubbleSortOptmize2(arr)
         const depois = performance.now()
         const ranking:Ranking = {lista:1_000, tempo:depois - antes}
         RankingFinal.push(ranking)
+        numero = arr.length
     });
 
     it('Lista com array com 2_000 numeros', async () =>{
-        const arr = listaDecrescente(2_000)
+        const arr = listaDecrescente(numero * 2)
         const antes = performance.now()
         bubbleSortOptmize2(arr)
         const depois = performance.now()
         const ranking:Ranking = {lista:2_000, tempo:depois - antes}
         RankingFinal.push(ranking)
+        numero = arr.length
     })
 
     afterAll(()=>{
