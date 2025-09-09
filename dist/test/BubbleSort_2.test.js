@@ -12,32 +12,36 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const BubbleSort_1 = require("../src/BubbleSort");
 describe('Lista certas', () => {
     let RankingFinal;
+    let numero = 2000;
     beforeAll(() => {
         RankingFinal = [];
     });
-    it('Lista com array com 500 numeros', () => __awaiter(void 0, void 0, void 0, function* () {
-        const arr = listaDescrescente(500);
+    it(`Lista com array com ${numero * 2} numeros`, () => __awaiter(void 0, void 0, void 0, function* () {
+        const arr = listaDecrescente(numero * 2);
         const antes = performance.now();
         (0, BubbleSort_1.bubbleSortOptmize2)(arr);
         const depois = performance.now();
-        const ranking = { lista: 500, tempo: depois - antes };
+        const ranking = { lista: arr.length, tempo: depois - antes };
         RankingFinal.push(ranking);
+        numero = arr.length;
     }));
-    it('Lista com array com 1_000 numeros', () => __awaiter(void 0, void 0, void 0, function* () {
-        const arr = listaDescrescente(1000);
+    it(`Lista com array com ${numero * 2} numeros`, () => __awaiter(void 0, void 0, void 0, function* () {
+        const arr = listaDecrescente(numero * 2);
         const antes = performance.now();
         (0, BubbleSort_1.bubbleSortOptmize2)(arr);
         const depois = performance.now();
-        const ranking = { lista: 1000, tempo: depois - antes };
+        const ranking = { lista: arr.length, tempo: depois - antes };
         RankingFinal.push(ranking);
+        numero = arr.length;
     }));
-    it('Lista com array com 2_000 numeros', () => __awaiter(void 0, void 0, void 0, function* () {
-        const arr = listaDescrescente(2000);
+    it(`Lista com array com ${numero * 2} numeros`, () => __awaiter(void 0, void 0, void 0, function* () {
+        const arr = listaDecrescente(numero * 2);
         const antes = performance.now();
         (0, BubbleSort_1.bubbleSortOptmize2)(arr);
         const depois = performance.now();
-        const ranking = { lista: 2000, tempo: depois - antes };
+        const ranking = { lista: arr.length, tempo: depois - antes };
         RankingFinal.push(ranking);
+        numero = arr.length;
     }));
     afterAll(() => {
         let texto = "";
@@ -53,9 +57,9 @@ describe('Lista certas', () => {
         console.log(texto);
     });
 });
-function listaDescrescente(size) {
+function listaDecrescente(size) {
     let arr = [];
-    while (size >= 0) {
+    while (size > 0) {
         arr.push(size);
         size--;
     }
